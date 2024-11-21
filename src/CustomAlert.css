@@ -1,0 +1,78 @@
+/* Overlay untuk latar belakang */
+.custom-alert-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  /* Box alert */
+  .custom-alert {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    animation: slideIn 0.3s ease-out;
+  }
+  
+  .custom-alert.error {
+    border-left: 5px solid #ff4444;
+    background: #fff5f5;
+  }
+  
+  .custom-alert.warning {
+    border-left: 5px solid #ffbb33;
+    background: #fff9e6;
+  }
+  
+  .custom-alert.success {
+    border-left: 5px solid #00C851;
+    background: #f0fff4;
+  }
+  
+  .alert-icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .custom-alert p {
+    color: #333;
+    margin: 10px 0;
+    font-size: 16px;
+  }
+  
+  /* Tombol OK */
+  .custom-alert button {
+    background: #4a5568;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s;
+  }
+  
+  .custom-alert button:hover {
+    background: #2d3748;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  

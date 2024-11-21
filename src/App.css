@@ -1,0 +1,121 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: #ffffff;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+button {
+  background: linear-gradient(45deg, #6b46c1 0%, #805ad5 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin: 10px;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(107, 70, 193, 0.4);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+input {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 12px;
+  color: white;
+  font-size: 1rem;
+  margin: 10px;
+  width: 300px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #805ad5;
+  box-shadow: 0 0 0 2px rgba(128, 90, 213, 0.2);
+}
+
+.status-connected {
+  color: #48bb78;
+  font-weight: bold;
+  animation: pulse 2s infinite;
+}
+
+.status-disconnected {
+  color: #f56565;
+  font-weight: bold;
+}
+
+.value-display {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 20px 0;
+  background: -webkit-linear-gradient(45deg, #6b46c1, #805ad5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.transaction-status {
+  padding: 10px;
+  border-radius: 8px;
+  margin: 10px 0;
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.error-message {
+  background: rgba(245, 101, 101, 0.1);
+  color: #f56565;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.success-message {
+  background: rgba(72, 187, 120, 0.1);
+  color: #48bb78;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 10px 0;
+}

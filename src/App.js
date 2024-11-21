@@ -140,7 +140,11 @@ function App() {
   return (
     <div className="App">
       <h1>Check ETH Balance</h1>
-      <p>Connected Wallet Address: { walletAddress }</p>
+      <div className="address-container">
+        <div className="address-text wallet-address">
+          {walletAddress || 'Wallet tidak terkoneksi'}
+        </div>
+      </div>
       <button onClick={getBalance}>Get Balance</button>
       {balance && (
         <div>
@@ -150,28 +154,32 @@ function App() {
       )}
       <hr />
       <h1>Number setter</h1>
-      <p>Contract Address: { contract && contract.address }</p>
-      <p>Number: { number }</p>
+      <div className="address-container">
+        <div className="address-text contract-address">
+          {contract && contract.address}
+        </div>
+      </div>
+      <p>Number: {number}</p>
       <div>
-        <button onClick={incrementNumber}>Increment</button> <button onClick={decrementNumber}>Decrement</button>
+        <button onClick={incrementNumber}>Increment</button>
+        <button onClick={decrementNumber}>Decrement</button>
       </div>
       <br />
       <div>
         <input 
-            type="text" 
-            value={inputValue} 
-            onChange={(e) => setInputValue(e.target.value)} 
-            placeholder="Enter number" 
-          />
-          <button onClick={handleSetNumber}>Set Number</button>
-          {showAlert && (
-        <CustomAlert
-          type={alertType}
-          message={alertMessage}
-          onClose={closeAlert}
+          type="number" 
+          value={inputValue} 
+          onChange={(e) => setInputValue(e.target.value)} 
+          placeholder="Enter number" 
         />
-      )}
-          <p></p>
+        <button onClick={handleSetNumber}>Set Number</button>
+        {showAlert && (
+          <CustomAlert
+            type={alertType}
+            message={alertMessage}
+            onClose={closeAlert}
+          />
+        )}
       </div>
     </div>
   );
